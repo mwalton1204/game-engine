@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <array>
+#include <unordered_map>
+#include <queue>
 #include "Constants.h"
 
 class ComponentManager {
@@ -14,8 +16,9 @@ class ComponentManager {
 
     private:
 
-        std::vector<std::array<ComponentType, MAX_ENTITIES>> componentData;
-
+        std::vector<std::array<ComponentType, MAX_ENTITIES>> componentData{};
+        std::unordered_map<int, int> componentArrayKey{};
+        std::queue<Component> availableComponents{};
 };
 
         
