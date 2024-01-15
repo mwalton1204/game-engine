@@ -8,17 +8,17 @@ class EntityManager {
 
     public:
 
-    EntityManager();
+        EntityManager();
 
-    Entity createEntity();
-    void destroyEntity(Entity);
-    ComponentTracker getComponentTracker(Entity);
+        Entity createEntity();
+        void destroyEntity(Entity);
+        ComponentTracker getComponentTracker(Entity);
 
     private:
 
-    std::queue<Entity> availableEntities{};
-    std::array<ComponentTracker, MAX_ENTITIES> componentTrackers{};
+        std::queue<Entity> availableEntities{};
+        std::array<ComponentTracker, MAX_ENTITIES> componentTrackers{};
 
-    int livingEntities;
+        int livingEntities;
 
 };
