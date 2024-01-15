@@ -20,5 +20,4 @@ class EntityManager {
         std::array<ComponentTracker, MAX_ENTITIES> componentTrackers{};
 
         int livingEntities;
-
 };
