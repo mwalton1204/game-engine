@@ -1,0 +1,16 @@
+#Ignore everything
+*
+*/
+
+#Unignore specific sub directories
+!/ECS
+!/Utils
+
+#Unignore specific files
+!README.md
+!.gitignore
+!CMakeLists.txt
+
+#Unignore specific file types
+!*.cpp
+!*.h
