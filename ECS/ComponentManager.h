@@ -17,10 +17,12 @@ class ComponentManager {
 
     private:
 
-        std::vector<std::array<ComponentType, MAX_ENTITIES>> dataArray{};
-        std::unordered_map<int, int> componentArrayKey{};
-        std::queue<Component> availableComponents{};
-        int qtyComponents = dataArray.size();
+        std::array<std::vector<ComponentType>, MAX_COMPONENTS> componentArray;
+        std::array<std::unordered_map<int, int>, MAX_COMPONENTS> entityIndexKey;
+        
+        std::queue<Component> availableComponentIDs{};
+
+        int qtyComponents;
 };
 
         
