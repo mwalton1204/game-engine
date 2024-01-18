@@ -24,5 +24,3 @@ class ComponentManager {
 
         int qtyComponents;
 };
-
-        

@@ -20,3 +20,18 @@ void ComponentManager::addComponent(Entity entityID, Component componentID, Comp
     int entityIndex = componentArray[componentID].size() - 1;
     entityIndexKey[componentID].insert({entityID, entityIndex});
 }
+
+void ComponentManager::removeComponent(Entity entityID, Component componentID) {
+    assert(entityID >= 0 && entityID < MAX_ENTITIES && "removeComponent: Invalid Entity ID");
+    assert(componentID >= 0 && componentID < MAX_COMPONENTS && "removeComponent: Invalid Component ID");
+    assert(entityIndexKey[componentID].count(entityID) && "removeComponent: Entity does not have this component");
+
+
+    // "For this component, get the index of the data for this entity"
+    int indexToRemove = entityIndexKey[componentID].find(entityID)->second;
+    // "For this component, erase the data for this entity"
+    componentArray[componentID].erase(componentArray[componentID].begin() + indexToRemove);
+
+    // "Remove this entity from the key"
+    entityIndexKey[componentID].erase(entityID);
+}
