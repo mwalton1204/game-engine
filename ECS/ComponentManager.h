@@ -14,6 +14,7 @@ class ComponentManager {
         void registerComponent();
         void addComponent(Entity, Component, ComponentType);
         void removeComponent(Entity, Component);
+        void entityDestroyed(Entity);
 
     private:
 

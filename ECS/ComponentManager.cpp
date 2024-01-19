@@ -35,3 +35,18 @@ void ComponentManager::removeComponent(Entity entityID, Component componentID) {
     // "Remove this entity from the key"
     entityIndexKey[componentID].erase(entityID);
 }
+
+void ComponentManager::entityDestroyed(Entity entityID) {
+    // For each possible component ID
+    for(int i = 0; i < MAX_COMPONENTS; i++) {
+        // Check if entity has the component
+        auto it = entityIndexKey[i].find(entityID);
+        if(it != entityIndexKey[i].end()) {
+            // Remove the entity data from this component
+            int indexToRemove = it->second;
+            componentArray[i].erase(componentArray[i].begin() + indexToRemove);
+            // Remove entity from key for this component
+            entityIndexKey[i].erase(it);
+        }
+    }
+}
