@@ -5,6 +5,7 @@
 #Unignore specific sub directories
 !/ECS
 !/ECS/Components
+!/ECS/Systems
 !/Utils
 
 #Unignore specific files
