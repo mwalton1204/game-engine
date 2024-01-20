@@ -2,4 +2,5 @@
 
 struct Player
 {
+    float speed;
 };
