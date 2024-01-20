@@ -21,3 +21,6 @@ class EntityManager {
 
         int livingEntities;
 };
+
+
+//TODO: convert tracker from array to vector and create key
