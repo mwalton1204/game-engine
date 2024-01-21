@@ -5,6 +5,13 @@
 
 class PlayerMovement : public System {
 
-    void update(ComponentManager&);
+    public:
+
+        void update(ComponentManager&);
+        int getPriority();
+
+    private:
+
+        int updatePriority;
 
 };
