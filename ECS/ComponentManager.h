@@ -15,7 +15,7 @@ class ComponentManager {
         void addComponent(Entity, Component, ComponentType);
         void removeComponent(Entity, Component);
         void entityDestroyed(Entity);
-        ComponentType getComponent(Entity, Component);
+        ComponentType& getComponent(Entity, Component);
 
     private:
 

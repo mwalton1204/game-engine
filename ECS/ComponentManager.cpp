@@ -51,13 +51,13 @@ void ComponentManager::entityDestroyed(Entity entityID) {
     }
 }
 
-ComponentType ComponentManager::getComponent(Entity entityID, Component componentID) {
+ComponentType& ComponentManager::getComponent(Entity entityID, Component componentID) {
     // Check if entity has the component
     auto it = entityIndexKey[componentID].find(entityID);
     assert(it != entityIndexKey[componentID].end() && "getComponent: Entity does not have this component");
     
     int indexToGet = it->second;
-    ComponentType data = componentArray[componentID][indexToGet];
+    ComponentType& data = componentArray[componentID][indexToGet];
 
     return data;
 }
