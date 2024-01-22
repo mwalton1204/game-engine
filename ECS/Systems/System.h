@@ -8,6 +8,6 @@ class System {
 
     public:
 
-        std::set<Entity> entities;
         virtual int getPriority();
+        
 };
