@@ -8,6 +8,7 @@ class System {
 
     public:
 
+        virtual void update(float);
         virtual int getPriority();
-        
+
 };

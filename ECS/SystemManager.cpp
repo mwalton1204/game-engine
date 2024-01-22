@@ -8,6 +8,10 @@ systems.push_back({system.getPriority(), system});
 
 void SystemManager::updateSystems(float dt) {
 
+    for(auto pair : systems) {
+        pair.second.update(dt);
+    }
+
 }
 
 bool SystemManager::isRegistered(System& system) {

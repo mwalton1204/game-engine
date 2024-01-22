@@ -7,7 +7,7 @@ class PlayerMovement : public System {
 
     public:
 
-        void update(ComponentManager&);
+        void update(float) override;
         int getPriority() override;
 
     private:
