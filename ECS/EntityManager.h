@@ -1,7 +1,8 @@
 #pragma once
 
 #include <queue>
-#include <array>
+#include <vector>
+#include <algorithm>
 #include "Constants.h"
 
 class EntityManager {
@@ -16,10 +17,10 @@ class EntityManager {
 
     private:
 
-        std::queue<Entity> availableEntities{};
-        std::array<ComponentTracker, MAX_ENTITIES> componentTrackers{};
+        std::queue<Entity> availableIDs{};
+        std::vector<std::pair<Entity, ComponentTracker>> livingEntities;
 
-        int livingEntities;
+        int qtyEntities = livingEntities.size();
 };
 
 
