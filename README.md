@@ -1,3 +1,3 @@
-# Game Engine Design
+# Game Engine
 
-Studying various elements of game design
+Studying various elements of game engine design
