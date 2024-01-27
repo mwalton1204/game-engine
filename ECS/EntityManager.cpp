@@ -18,13 +18,9 @@ Entity EntityManager::createEntity() {
 
 void EntityManager::destroyEntity(Entity id) {
 
-    int index = 0;
-
-    for (const auto& pair : livingEntities) {
-        if(id == pair.first) {
-            livingEntities.erase(livingEntities.begin() + index);
-        } else {
-            index++;
+    for (auto it = livingEntities.begin(); it != livingEntities.end(); ++it) {
+        if(id == it->first) {
+            it = livingEntities.erase(it);
         }
     }
     availableIDs.push(id); // Put destroyed entity id on back of array of available id's
