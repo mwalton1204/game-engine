@@ -41,3 +41,13 @@ ComponentTracker EntityManager::getComponentTracker(Entity id) {
 
     return tracker;
 }
+
+std::vector<int> EntityManager::getLivingEntities() {
+    std::vector<int> entities;
+
+    for(const auto& pair : livingEntities) {
+        entities.push_back(pair.first);
+    }
+
+    return entities;
+}

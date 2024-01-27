@@ -3,6 +3,7 @@
 #include <queue>
 #include <vector>
 #include <algorithm>
+
 #include "Constants.h"
 
 class EntityManager {
@@ -14,6 +15,7 @@ class EntityManager {
         Entity createEntity();
         void destroyEntity(Entity);
         ComponentTracker getComponentTracker(Entity);
+        std::vector<int> getLivingEntities();
 
     private:
 
@@ -22,6 +24,3 @@ class EntityManager {
 
         int qtyEntities = livingEntities.size();
 };
-
-
-//TODO: convert tracker from array to vector and create key
