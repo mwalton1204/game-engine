@@ -1,10 +1,17 @@
 #include "ComponentManager.h"
 
-void ComponentManager::registerComponent() {
-    assert(!availableComponentIDs.empty() && "registerComponent: No available component ID");
+ComponentManager::ComponentManager() {
+    for(Component i = 0; i < MAX_COMPONENTS; i++) {
+        availableComponentIDs.push(i);
+    }
+}
 
+void ComponentManager::registerComponent() {
     Component newComponent = availableComponentIDs.front();
     availableComponentIDs.pop();
+
+    
+
 
     qtyComponents++;
 }
